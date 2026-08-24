@@ -1,0 +1,45 @@
+:root {
+    /* Backgrounds */
+    --color-background: #211e1e;
+
+    /* Header */
+    --height-header: 100px;
+    --color-header-background: #1c1c1c;
+    --color-header-text: #ffffff;
+    --width-header-dropdown: 250px;
+
+    /* Footer */
+    --color-footer-background: #f1c232;
+    --color-footer-text: #1c1c1c;
+    --height-footer: 100px;
+    --size-footer-img: 3.75rem;
+
+    /* Headpage */
+    --color-headpage-background: #866a16;
+    --color-headpage-text: #ffffff;
+
+    /* Divider */
+    --color-divider: #ffffff;
+    --height-divider: 2px;
+    --width-divider: 90%;
+
+    /* Text */
+    --color-titles: #f1c232;
+    --color-text: #ffffff;
+    --font-family: "Comfortaa", sans-serif;
+
+    /* Previews */
+    --width-preview: 80%;
+    --height-preview: 30%;
+    --mobile-height-preview: 10%;
+
+    /* Text divs */
+    --width-textdiv: 75%;
+    --fontsize-textdiv-text: 1.25rem;
+    --fontsize-mediaitem-text: 1rem;
+}
+
+@font-face {
+    font-family: "Comfortaa";
+    src: url("../Assets/Fonts/Comfortaa-Regular.ttf");
+}
