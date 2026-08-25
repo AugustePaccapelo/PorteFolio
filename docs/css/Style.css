@@ -23,8 +23,8 @@ header a.active {
     text-underline-offset: 8px;
 }
 
-a.hidden {
-    color: inherit;
+nav a {
+    color: var(--color-header-text);
     text-decoration: none;
 }
 

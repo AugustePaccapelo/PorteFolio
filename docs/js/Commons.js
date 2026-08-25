@@ -64,8 +64,17 @@ function setActivePageInNav() {
     document.querySelectorAll("header a").forEach(function(link) {
         const linkPath = new URL(link.href).pathname;
 
-        if (currentPage === (linkPath)){
+        if (currentPage === linkPath){
             link.classList.add("active");
+        }
+        else if (linkPath.endsWith("index.html")) {
+            const linkDir = linkPath.replace("index.html", "");
+
+            const isDirValid = !(linkDir.endsWith("docs/") || linkDir.endsWith("PorteFolio/"));
+
+            if (isDirValid && currentPage.startsWith(linkDir)) {
+                link.classList.add("active");
+            }
         }
     })
 }
