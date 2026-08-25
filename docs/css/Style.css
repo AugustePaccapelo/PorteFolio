@@ -102,7 +102,6 @@ header nav {
     width: var(--width-preview);
     margin: auto;
     gap: var(--gap-preview);
-    max-height: var(--max-height-preview);
 }
 
 .preview.project {
@@ -127,14 +126,14 @@ header nav {
 }
 
 .preview img {
-    height: 100%;
+    height: auto;
     width: 40%;
     object-fit: contain;
     margin: auto;
 }
 
 .preview video {
-    height: 100%;
+    max-height: 100%;
     width: 40%;
     object-fit: contain;
     margin: auto;
