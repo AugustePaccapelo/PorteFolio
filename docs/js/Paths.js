@@ -1,4 +1,5 @@
-const root = getRootPath();
+// const root = getRootPath();
+const root = new URL("../", document.currentScript.src).href;
 window.ROOT = root;
 
 loadStyle("css/Variables.css");
