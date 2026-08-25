@@ -1,6 +1,7 @@
 .head-page {
     background-color: var(--color-headpage-background);
     color: var(--color-headpage-text);
+    margin-bottom: var(--margin-bot-header);
 
     display: flex;
     flex-direction: column;
@@ -101,6 +102,7 @@ header nav {
     width: var(--width-preview);
     margin: auto;
     gap: var(--gap-preview);
+    max-height: var(--max-height-preview);
 }
 
 .preview.project {
