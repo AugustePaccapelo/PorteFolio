@@ -125,15 +125,7 @@ header nav {
     flex-direction: row;
 }
 
-.preview img {
-    /* height: auto; */
-    /* width: 40%; */
-    object-fit: contain;
-    margin: auto;
-    max-height: 75%;
-}
-
-.preview video {
+.preview img, .preview video {
     max-height: 100%;
     width: 40%;
     object-fit: contain;

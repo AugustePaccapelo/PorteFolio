@@ -1,0 +1,24 @@
+[
+    {
+        "id": "tween_core",
+        "title": "Tween Core",
+        "job": "Tool Programmer",
+        "categories": ["unity", "personal", "csharp", "solo", "tool", "package"],
+        "date": "11 2025",
+        "duration": "2 mois",
+        "assets_path": "Assets/Projects/Personal/2025/TweenCore/",
+        "thumbnail": "Preview.gif",
+        "link": "PersonalProjects/TweenCore.html"
+    },
+    {
+        "id": "devtober",
+        "title": "Devtober",
+        "job": "Game Programmer",
+        "categories": ["unity", "personal", "csharp", "solo"],
+        "date": "10 2025",
+        "duration": "1 mois",
+        "assets_path": "Assets/Projects/Personal/2025/Devtober/",
+        "thumbnail": "2025promptlist.png",
+        "link": "PersonalProjects/Devtober.html"
+    }
+]

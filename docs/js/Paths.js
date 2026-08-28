@@ -2,12 +2,13 @@
 const root = new URL("../", document.currentScript.src).href;
 window.ROOT = root;
 
+loadScript("js/Projects.js");
+loadScript("js/Commons.js");
+loadScript("js/Main.js");
+
 loadStyle("css/Variables.css");
 loadStyle("css/Reset.css");
 loadStyle("css/Style.css");
-
-loadScript("js/Commons.js");
-loadScript("js/Main.js");
 
 function getRootPath() {
     const path = window.location.pathname;

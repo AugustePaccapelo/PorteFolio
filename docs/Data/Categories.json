@@ -1,0 +1,16 @@
+{
+    "solo" : "Solo",
+    "group": "Group",
+    "unity": "Unity",
+    "unreal": "Unreal",
+    "godot": "Godot",
+    "csharp": "C#",
+    "cpp": "C++",
+    "game": "Game",
+    "tool": "Tool",
+    "package": "Package",
+    "personal": "Personnel",
+    "school": "École",
+    "isart": "ISART",
+    "iim": "IIM"
+}

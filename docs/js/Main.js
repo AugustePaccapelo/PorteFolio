@@ -1,7 +1,12 @@
-document.addEventListener("DOMContentLoaded", onHtmlInitialize);
-displayPreview();
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", onHtmlInitialize);
+}
+else {
+    onHtmlInitialize();
+}
 
-function onHtmlInitialize() {
+async function onHtmlInitialize() {
+    await loadProjects();
     displayPreview();
 }
 
