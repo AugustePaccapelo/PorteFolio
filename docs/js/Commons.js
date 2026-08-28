@@ -15,11 +15,11 @@ class SiteHeader extends HTMLElement {
                     <li class="nav-dropdown">
                         <h4><a href="${ROOT}SchoolProjects/index.html">Projets d'école</a></h4>
                         <ul class="nav-dropdown-content">
+                            <li><h4><a href="${ROOT}SchoolProjects/IIM/ZeroPaws.html">Zero Paws</a></h4></li>
                             <li><h4><a href="${ROOT}SchoolProjects/IIM/DragonsCadence.html">Dragon's Cadence</a></h4></li>
                             <li><h4><a href="${ROOT}SchoolProjects/IIM/ColorSurvivor.html">Color Survivor</a></h4></li>
                             <li><h4><a href="${ROOT}SchoolProjects/ISARTDigital/Sokovolt.html">Sokovolt</a></h4></li>
                             <li><h4><a href="${ROOT}SchoolProjects/ISARTDigital/MorseLearner.html">Morse Learner</a></h4></li>
-                            <li><h4><a href="${ROOT}SchoolProjects/ISARTDigital/BlindGunner.html">Blind Gunner</a></h4></li>
                         </ul>
                     </li>
                     <h4><a href="${ROOT}Contact.html">Contact & CV</a></h4>

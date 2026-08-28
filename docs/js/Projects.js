@@ -60,11 +60,20 @@ async function loadProjects() {
     if (container != null) {
         const currentCategory = container.dataset.category;
 
-        projects = sortProjects(projects, currentCategory);
+        if (currentCategory != undefined) {
+            projects = sortProjects(projects, currentCategory);
+        }
 
         //Ranks
         const ranks_file = await fetch(root + "Data/RankedProjects.json");
         const ranks = await ranks_file.json();
+
+        projects.sort((a, b) => ranks[a.id] - ranks[b.id]);
+
+        const projectLimit = container.dataset.projectLimit;
+        if (projectLimit != undefined) {
+            projects = projects.slice(0, Number(projectLimit));
+        }
 
         projects.forEach(project => {
             container.innerHTML += createProjectPreview(project); 
