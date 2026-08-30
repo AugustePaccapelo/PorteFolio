@@ -1,44 +1,58 @@
 :root {
-    /* Backgrounds */
-    --color-background: #211e1e;
+    /* Colors */
+    --color-page-background: #211e1e;
+    --color-surface-dark: #1c1c1c;
+    --color-text-primary: #ffffff;
+    --color-text-dark: #1c1c1c;
+    --color-accent: #f1c232;
+    --color-head-page-background: #866a16;
+    --color-divider: #ffffff;
 
     /* Header */
-    --height-header: 100px;
-    --color-header-background: #1c1c1c;
-    --color-header-text: #ffffff;
-    --width-header-dropdown: 250px;
-    --margin-bot-header: 50px;
+    --header-height: 100px;
+    --header-dropdown-width: 250px;
+    --header-link-underline-thickness: 4px;
+    --header-link-underline-offset: 8px;
+    --header-nav-gap: 2.5%;
 
     /* Footer */
-    --color-footer-background: #f1c232;
-    --color-footer-text: #1c1c1c;
-    --height-footer: 100px;
-    --size-footer-img: 3.75rem;
-    --margin-top-footer: 50px;
-
-    /* Headpage */
-    --color-headpage-background: #866a16;
-    --color-headpage-text: #ffffff;
+    --footer-height: 100px;
+    --footer-icon-size: 3.75rem;
+    --footer-icon-container-width: 33%;
+    --footer-icon-gap: 10%;
 
     /* Divider */
-    --color-divider: #ffffff;
-    --height-divider: 2px;
-    --width-divider: 90%;
+    --divider-height: 2px;
+    --divider-width: 90%;
 
-    /* Text */
-    --color-titles: #f1c232;
-    --color-links: #f1c232;
-    --color-text: #ffffff;
+    /* Typography */
     --font-family: "Comfortaa", sans-serif;
+    --font-size-h1: 3rem;
+    --font-size-h2: 2.5rem;
+    --font-size-h3: 1.5rem;
+    --font-size-h4: 1.25rem;
+    --font-size-body: 1.5rem;
+    --font-size-text-block: 1.25rem;
+    --font-size-media-caption: 1rem;
+    --font-weight-text-light: 200;
+    --font-weight-strong: 900;
 
-    /* Previews */
-    --width-preview: 80%;
-    --gap-preview: 20px;
-
-    /* Text divs */
-    --width-textdiv: 75%;
-    --fontsize-textdiv-text: 1.25rem;
-    --fontsize-mediaitem-text: 1rem;
+    /* Layout */
+    --full-size: 100%;
+    --head-page-bottom-margin: 50px;
+    --footer-top-margin: 50px;
+    --section-gap: 2.5%;
+    --preview-width: 80%;
+    --preview-gap: 20px;
+    --preview-media-width: 40%;
+    --preview-media-max-height: 75%;
+    --text-block-width: 75%;
+    --featured-video-width: 80%;
+    --featured-video-max-height: 80vh;
+    --default-video-width: 50%;
+    --media-gallery-columns: 3;
+    --media-item-aspect-ratio: 16 / 9;
+    --vertical-flex-gap: 20px;
 }
 
 @font-face {

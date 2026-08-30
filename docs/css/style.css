@@ -1,7 +1,7 @@
 .head-page {
-    background-color: var(--color-headpage-background);
-    color: var(--color-headpage-text);
-    margin-bottom: var(--margin-bot-header);
+    background-color: var(--color-head-page-background);
+    color: var(--color-text-primary);
+    margin-bottom: var(--head-page-bottom-margin);
 
     display: flex;
     flex-direction: column;
@@ -9,27 +9,27 @@
 
 .head-page h1,
 .head-page h3 {
-    color: var(--color-headpage-text);
+    color: var(--color-text-primary);
 }
 
 header a {
-    color: var(--color-header-text);
+    color: var(--color-text-primary);
 }
 
 header a.active {
     text-decoration: underline;
-    text-decoration-color: var(--color-titles);
-    text-decoration-thickness: 4px;
-    text-underline-offset: 8px;
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: var(--header-link-underline-thickness);
+    text-underline-offset: var(--header-link-underline-offset);
 }
 
 nav a {
-    color: var(--color-header-text);
+    color: var(--color-text-primary);
     text-decoration: none;
 }
 
 header nav {
-    width: 100%;
+    width: var(--full-size);
 }
 
 .nav-bar {
@@ -37,8 +37,8 @@ header nav {
     flex-direction: row;
     list-style: none;
     justify-content: left;
-    width: 100%;
-    gap: 2.5%;
+    width: var(--full-size);
+    gap: var(--header-nav-gap);
 }
 
 .nav-dropdown {
@@ -50,11 +50,11 @@ header nav {
 
     position: absolute;
 
-    background-color: var(--color-header-background);
+    background-color: var(--color-surface-dark);
 
     list-style: none;
 
-    width: var(--width-header-dropdown);
+    width: var(--header-dropdown-width);
 }
 
 .nav-dropdown-content li a {
@@ -69,14 +69,14 @@ header nav {
 .footer-img-container {
     display: flex;
     flex-direction: row;
-    gap: 10%;
-    width: 33%;
+    gap: var(--footer-icon-gap);
+    width: var(--footer-icon-container-width);
     justify-content: center;
 }
 
 .footer-img-container img {
-    width: var(--size-footer-img);
-    height: var(--size-footer-img);
+    width: var(--footer-icon-size);
+    height: var(--footer-icon-size);
     object-fit: contain;
 }
 
@@ -88,29 +88,26 @@ header nav {
 
 .divider {
     background-color: var(--color-divider);
-    width: var(--width-divider);
-    height: var(--height-divider);
+    width: var(--divider-width);
+    height: var(--divider-height);
 
     margin: auto;
 
-    margin-top: 2.5%;
-    margin-bottom: 2.5%;
+    margin-top: var(--section-gap);
+    margin-bottom: var(--section-gap);
 }
 
 .preview {
     display: flex;
-    width: var(--width-preview);
+    width: var(--preview-width);
     margin: auto;
-    gap: var(--gap-preview);
+    gap: var(--preview-gap);
 }
 
 .preview.project {
     cursor: pointer;
     text-decoration: none;
     color: inherit;
-}
-
-@media (max-width: 780px) {
 }
 
 .preview:visited {
@@ -126,8 +123,8 @@ header nav {
 }
 
 .preview img, .preview video {
-    max-height: 75%;
-    width: 40%;
+    max-height: var(--preview-media-max-height);
+    width: var(--preview-media-width);
     object-fit: contain;
     margin: auto;
 }
@@ -139,17 +136,17 @@ header nav {
 
 .text-div {
     text-align: center;
-    width: var(--width-textdiv);
+    width: var(--text-block-width);
     margin: auto;
 }
 
 .text-div p {
-    font-size: var(--fontsize-textdiv-text);
-    font-weight: 200;
+    font-size: var(--font-size-text-block);
+    font-weight: var(--font-weight-text-light);
 }
 
 .video-div {
-    max-height: 100%;
+    max-height: var(--full-size);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -158,9 +155,9 @@ header nav {
 .video-div video, .video-div iframe {
     height: auto;
     min-height: 0;
-    max-height: 80vh;
-    width: 80%;
-    max-width: 80%;
+    max-height: var(--featured-video-max-height);
+    width: var(--featured-video-width);
+    max-width: var(--featured-video-width);
 }
 
 .video-div video {
@@ -172,27 +169,27 @@ header nav {
 }
 
 .media-gallery {
-    width: var(--width-preview);
+    width: var(--preview-width);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(var(--media-gallery-columns), 1fr);
     margin: auto;
-    gap: 2.5%;
+    gap: var(--section-gap);
 }
 
 .media-item img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
+    width: var(--full-size);
+    aspect-ratio: var(--media-item-aspect-ratio);
     object-fit: cover;
 }
 
 .media-item p {
     text-align: center;
-    font-size: var(--fontsize-mediaitem-text);
+    font-size: var(--font-size-media-caption);
 }
 
 .verticalFlex {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: var(--vertical-flex-gap);
 }

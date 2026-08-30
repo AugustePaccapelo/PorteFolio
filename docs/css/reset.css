@@ -1,17 +1,17 @@
 body {
-    background-color: var(--color-background);
-    color: var(--color-text);
+    background-color: var(--color-page-background);
+    color: var(--color-text-primary);
     font-family: var(--font-family);
     
-    padding-top: var(--height-header);
+    padding-top: var(--header-height);
 }
 
 header {
     position: fixed;
-    height: var(--height-header);
-    width: 100%;
+    height: var(--header-height);
+    width: var(--full-size);
     top: 0;
-    background-color: var(--color-header-background);
+    background-color: var(--color-surface-dark);
 
     font-family: var(--font-family);
 
@@ -23,54 +23,54 @@ header {
 footer {
     display: flex;
     flex-direction: row;
-    height: var(--height-footer);
-    width: 100%;
+    height: var(--footer-height);
+    width: var(--full-size);
     align-items: center;
-    margin-top: var(--margin-top-footer);
+    margin-top: var(--footer-top-margin);
 
     font-family: var(--font-family);
 
-    background-color: var(--color-footer-background);
-    color: var(--color-footer-text);
+    background-color: var(--color-accent);
+    color: var(--color-text-dark);
 }
 
 h1, h2, h3, h4 {
-    color: var(--color-titles);
+    color: var(--color-accent);
     text-align: center;
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: var(--font-size-h1);
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: var(--font-size-h2);
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: var(--font-size-h3);
 }
 
 h4 {
-    font-size: 1.25rem;
+    font-size: var(--font-size-h4);
 }
 
 p {
-    font-size: 1.5rem;
+    font-size: var(--font-size-body);
 }
 
 a {
-    color: var(--color-links);
+    color: var(--color-accent);
 }
 
 strong {
-    font-weight: 900;
-    color: var(--color-titles);
+    font-weight: var(--font-weight-strong);
+    color: var(--color-accent);
 }
 
 video {
     display: block;
-    width: 50%;
+    width: var(--default-video-width);
     object-fit: contain;
     margin: 0 auto;
 }
