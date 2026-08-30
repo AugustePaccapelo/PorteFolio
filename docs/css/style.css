@@ -122,11 +122,15 @@ header nav {
     flex-direction: row;
 }
 
-.preview img, .preview video {
+.preview img, .preview video, .preview iframe {
     max-height: var(--preview-media-max-height);
     width: var(--preview-media-width);
     object-fit: contain;
     margin: auto;
+}
+
+.preview iframe {
+    aspect-ratio: 16 / 9;
 }
 
 .preview-text {
