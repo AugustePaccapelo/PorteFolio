@@ -1,6 +1,54 @@
-let categories;
+let projectData;
 
-function createProjectPreview(project) {
+async function fetchJson(path) {
+    const response = await fetch(root + path);
+    return response.json();
+}
+
+async function getProjectData() {
+    if (projectData !== undefined) {
+        return projectData;
+    }
+
+    const [projects, categories, projectOrder] = await Promise.all([
+        fetchJson("data/projects.json"),
+        fetchJson("data/categories.json"),
+        fetchJson("data/project_order.json")
+    ]);
+
+    projectData = { projects, categories, projectOrder };
+    return projectData;
+}
+
+function getProjectOrderIndex(project, projectOrder) {
+    const index = projectOrder.indexOf(project.id);
+    return index === -1 ? Number.MAX_SAFE_INTEGER : index;
+}
+
+function getOrderedProjects(projects, projectOrder) {
+    return [...projects].sort((a, b) => getProjectOrderIndex(a, projectOrder) - getProjectOrderIndex(b, projectOrder));
+}
+
+function getProjectsByCategory(projects, category) {
+    if (category === undefined) {
+        return projects;
+    }
+
+    return projects.filter(project => project.categories.includes(category));
+}
+
+function getBestOrderedProjects(projects, projectOrder, category, limit) {
+    let selectedProjects = getProjectsByCategory(projects, category);
+    selectedProjects = getOrderedProjects(selectedProjects, projectOrder);
+
+    if (limit !== undefined) {
+        selectedProjects = selectedProjects.slice(0, Number(limit));
+    }
+
+    return selectedProjects;
+}
+
+function createProjectPreview(project, categories) {
     return `
         <a class="preview project" href="${root}${project.link}">
             <img 
@@ -9,7 +57,7 @@ function createProjectPreview(project) {
             >
             <div class="preview-text">
                 <h2>${project.title}</h2>
-                <p>${project.date} - ${createCategories(project.categories)} - ${project.duration}</p>
+                <p>${project.date} - ${createCategoryLabel(project.categories, categories)} - ${project.duration}</p>
                 <h3>${project.job}</h3>
             </div>
         </a>
@@ -18,83 +66,74 @@ function createProjectPreview(project) {
     `;
 }
 
-function createCategories(project_categories) {
-    return project_categories.map(categoryId => {
+function createCategoryLabel(projectCategories, categories) {
+    return projectCategories.map(categoryId => {
         return `${categories[categoryId]}`;
     }).join(" - ");
-}
-
-function sortProjects(projects, category) {
-    return projects.filter(project => 
-        project.categories.includes(category)
-    );
 }
 
 function getProjectAsset(project, fileName) {
     return root + project.assets_path + fileName;
 }
 
-function setHeadPage(element, project) {
+function renderProjectHeader(element, project, categories) {
     element.innerHTML += `
         <h1>${project.title}</h1>
-        <h3>${project.date} - ${createCategories(project.categories)} - ${project.duration}</h3>
+        <h3>${project.date} - ${createCategoryLabel(project.categories, categories)} - ${project.duration}</h3>
         <h1>${project.job}</h1>
     `;
 }
 
-async function loadProjects() {
-    const container = document.getElementById("projects_container");
+function renderProjectPreviews(container, projects, categories) {
+    container.innerHTML = projects.map(project => createProjectPreview(project, categories)).join("");
+}
+
+function loadProjectAssets(project) {
+    document.querySelectorAll("[data-src]").forEach(element => {
+        const fileName = element.dataset.src;
+        const assetPath = getProjectAsset(project, fileName);
+        element.src = assetPath;
+
+        const video = element.closest("video");
+        if (video) {
+            video.load();
+        }
+    });
+}
+
+function getCurrentProject(projects) {
     const projectId = document.body.dataset.projectId;
-    if (container === null && projectId === null) return;
-
-    //Data
-    const projects_file = await fetch(root + "data/projects.json");
-    const all_projects = await projects_file.json();
-
-    //Categories
-    const categories_file = await fetch(root + "data/categories.json");
-    categories = await categories_file.json();
-
-    let projects = all_projects;
-
-    if (container != null) {
-        const currentCategory = container.dataset.category;
-
-        if (currentCategory != undefined) {
-            projects = sortProjects(projects, currentCategory);
-        }
-
-        //Ranks
-        const ranks_file = await fetch(root + "data/ranked_projects.json");
-        const ranks = await ranks_file.json();
-
-        projects.sort((a, b) => ranks[a.id] - ranks[b.id]);
-
-        const projectLimit = container.dataset.projectLimit;
-        if (projectLimit != undefined) {
-            projects = projects.slice(0, Number(projectLimit));
-        }
-
-        projects.forEach(project => {
-            container.innerHTML += createProjectPreview(project); 
-        });
+    if (projectId === undefined) {
+        return undefined;
     }
 
-    if (projectId) {
-        const project = projects.find(project => project.id === projectId);
+    return projects.find(project => project.id === projectId);
+}
 
+async function renderProjectsPage() {
+    const container = document.getElementById("projects_container");
+    const currentProjectId = document.body.dataset.projectId;
+    if (container === null && currentProjectId === undefined) {
+        return;
+    }
+
+    const { projects, categories, projectOrder } = await getProjectData();
+
+    if (container !== null) {
+        const projectsToDisplay = getBestOrderedProjects(
+            projects,
+            projectOrder,
+            container.dataset.category,
+            container.dataset.projectLimit
+        );
+
+        renderProjectPreviews(container, projectsToDisplay, categories);
+    }
+
+    const currentProject = getCurrentProject(projects);
+    if (currentProject !== undefined) {
         const headPage = document.querySelector(".head-page");
-        setHeadPage(headPage, project);
-
-        document.querySelectorAll("[data-src]").forEach(element => {
-            const fileName = element.dataset.src;
-            const assetPath = getProjectAsset(project, fileName);
-            element.src = assetPath;            
-            
-            const video = element.closest("video");
-            if (video) {
-                video.load();
-            }
-        });
+        renderProjectHeader(headPage, currentProject, categories);
+        loadProjectAssets(currentProject);
     }
 }

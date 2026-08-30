@@ -1,4 +1,3 @@
-// const root = getRootPath();
 const root = new URL("../", document.currentScript.src).href;
 window.ROOT = root;
 
@@ -10,18 +9,6 @@ loadStyle("css/variables.css");
 loadStyle("css/reset.css");
 loadStyle("css/style.css");
 
-function getRootPath() {
-    const path = window.location.pathname;
-
-    const index = path.indexOf("docs/");
-
-    if (index === -1) {
-        return "./";
-    }
-
-    return path.substring(0, index + 5);
-}
-
 function loadStyle(path) {
     const link = document.createElement("link");
     link.rel = "stylesheet";
@@ -32,6 +19,6 @@ function loadStyle(path) {
 function loadScript(path) {
     const script = document.createElement("script");
     script.src = root + path;
-    script.defer = true;
+    script.async = false;
     document.head.appendChild(script);
 }

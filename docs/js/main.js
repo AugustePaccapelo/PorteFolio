@@ -6,11 +6,11 @@ else {
 }
 
 async function onHtmlInitialize() {
-    await loadProjects();
-    displayPreview();
+    await renderProjectsPage();
+    applyAlternatingPreviewLayout();
 }
 
-function displayPreview() {
+function applyAlternatingPreviewLayout() {
     const previews = document.querySelectorAll(".preview");
 
     previews.forEach((element, index) => {
@@ -20,5 +20,5 @@ function displayPreview() {
         else {
             element.classList.add("left");
         }
-    })
+    });
 }
