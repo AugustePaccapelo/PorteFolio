@@ -76,6 +76,14 @@ function getProjectAsset(project, fileName) {
     return root + project.assets_path + fileName;
 }
 
+function getFileLabel(fileName) {
+    const nameWithoutExtension = fileName.split(".").slice(0, -1).join(".");
+    const readableName = nameWithoutExtension || fileName;
+    return readableName
+        .replace(/[_-]+/g, " ")
+        .replace(/\b\w/g, letter => letter.toUpperCase());
+}
+
 function renderProjectHeader(element, project, categories) {
     element.innerHTML += `
         <h1>${project.title}</h1>
@@ -94,8 +102,15 @@ function loadProjectAssets(project) {
         const assetPath = getProjectAsset(project, fileName);
         element.src = assetPath;
 
+        const fileLabel = getFileLabel(fileName);
+        if (element.tagName === "IMG" && (!element.hasAttribute("alt") || element.alt.trim() === "")) {
+            element.alt = fileLabel;
+        }
+
         const video = element.closest("video");
         if (video) {
+            video.title = fileLabel;
+            video.setAttribute("aria-label", fileLabel);
             video.load();
         }
     });

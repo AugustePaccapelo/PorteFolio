@@ -156,11 +156,11 @@ header nav {
 }
 
 .video-div video, .video-div iframe {
-    height: 100%;
+    height: auto;
     min-height: 0;
-    max-height: 100%; 
-    width: auto;
-    max-width: 100%;
+    max-height: 80vh;
+    width: 80%;
+    max-width: 80%;
 }
 
 .video-div video {
