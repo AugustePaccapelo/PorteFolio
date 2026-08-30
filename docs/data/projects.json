@@ -1,0 +1,90 @@
+[
+    {
+        "id": "tween_core",
+        "title": "Tween Core",
+        "job": "Tool Programmer",
+        "categories": ["unity", "csharp", "solo", "personal", "tool", "package"],
+        "date": "11 2025",
+        "duration": "2 mois",
+        "assets_path": "assets/projects/personal/2025/tween_core/",
+        "thumbnail": "preview.gif",
+        "link": "personal_projects/tween_core.html"
+    },
+    {
+        "id": "devtober",
+        "title": "Devtober",
+        "job": "Game Programmer",
+        "categories": ["unity", "csharp", "solo", "personal"],
+        "date": "10 2025",
+        "duration": "1 mois",
+        "assets_path": "assets/projects/personal/2025/devtober/",
+        "thumbnail": "prompt_list_2025.png",
+        "link": "personal_projects/devtober.html"
+    },
+    {
+        "id": "color_survivor",
+        "title": "Color Survivor",
+        "job": "Game Programmer",
+        "categories": ["cpp", "group", "school", "iim", "game", "pc"],
+        "date": "12 2025",
+        "duration": "2 semaines",
+        "assets_path": "assets/projects/school/iim/second_year/color_survivor/",
+        "thumbnail": "preview.gif",
+        "link": "school_projects/iim/color_survivor.html"
+    },
+    {
+        "id": "dragons_cadence",
+        "title": "Dragon's Cadence",
+        "job": "Game Programmer",
+        "categories": ["unity", "csharp", "group", "school", "iim", "game", "mobile"],
+        "date": "02 2026",
+        "duration": "1 mois",
+        "assets_path": "assets/projects/school/iim/second_year/dragons_cadence/",
+        "thumbnail": "icon_mobile.png",
+        "link": "school_projects/iim/dragons_cadence.html"
+    },
+    {
+        "id": "sokovolt",
+        "title": "Sokovolt",
+        "job": "Game Programmer",
+        "categories": ["godot", "csharp", "group", "school", "isart", "game", "pc"],
+        "date": "03 2025",
+        "duration": "2 mois",
+        "assets_path": "assets/projects/school/isart_digital/first_year/sokovolt/",
+        "thumbnail": "",
+        "link": "school_projects/isart_digital/sokovolt.html"
+    },
+    {
+        "id": "zero_paws",
+        "title": "Zero Paws",
+        "job": "Game Programmer",
+        "categories": ["unreal", "bp", "group", "school", "iim", "game", "pc"],
+        "date": "06 2025",
+        "duration": "1 mois",
+        "assets_path": "assets/projects/school/iim/second_year/zero_paws/",
+        "thumbnail": "",
+        "link": "school_projects/iim/zero_paws.html"
+    },
+    {
+        "id": "morse_learner",
+        "title": "Morse Learner",
+        "job": "Game Programmer",
+        "categories": ["godot", "csharp", "solo", "school", "isart", "game", "mobile"],
+        "date": "06 2025",
+        "duration": "2 semaines",
+        "assets_path": "assets/projects/school/isart_digital/first_year/morse_learner/",
+        "thumbnail": "",
+        "link": "school_projects/isart_digital/morse_learner.html"
+    },
+    {
+        "id": "blind_gunner",
+        "title": "Blind Gunner",
+        "job": "Game Programmer",
+        "categories": ["godot", "csharp", "solo", "school", "isart", "game", "pc"],
+        "date": "11 2024",
+        "duration": "1 mois",
+        "assets_path": "assets/projects/school/isart_digital/first_year/blind_gunner/",
+        "thumbnail": "",
+        "link": "school_projects/isart_digital/blind_gunner.html"
+    }
+]

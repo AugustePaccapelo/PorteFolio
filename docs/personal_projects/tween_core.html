@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <script src="../js/paths.js"></script>
+    </head>
+
+    <body data-project-id="tween_core">
+        <site-header></site-header>
+
+        <main>
+            <div class="head-page"></div>
+
+            <div class="main-content">
+                <!-- Contexte -->
+                <div class="text-div">
+                    <h1>Contexte</h1>
+                    <p>
+                        <strong>TweenCore</strong> est un <strong>package</strong> Unity qui permet de faire 
+                        des <strong>animations</strong>, principalement en 2D et / ou pour l'UI.
+                        <br><br>
+                        On peut l'utiliser par <strong>code</strong> et par <strong>éditeur</strong>, 
+                        en fonction de la complexité voulue. 
+                        J'ai essayé de faire une structure similaire aux <strong>Tweens</strong> de <strong>Godot</strong>.
+                    </p>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Exemple -->
+                <div>
+                    <!-- Text -->
+                    <div class="text-div">
+                        <h1>Exemple concret</h1>
+                        <p>
+                            Je l'ai utilisé pour un rendu de cours, on était en groupe de 3 Game Programmers 
+                            et nous avions fait le jeu "Président" en 1 semaine.
+                            <br><br>
+                            Ici les animations ont été créées par script.
+                        </p>
+                    </div>
+
+                    <!-- Image container -->
+                    <div class="media-gallery">
+                        <div class="media-item">
+                            <img data-src="draw_anim.gif">
+                            <p>Animation des boutons et de la distribution des cartes</p>
+                        </div>
+
+                        <div class="media-item">
+                            <img data-src="exchange.gif">
+                            <p>Animations d'échange de cartes entre 2 joeurs</p>
+                        </div>
+
+                        <div class="media-item">
+                            <img data-src="play_cards.gif">
+                            <p>Animation lorsque des joeurs jouent une ou plusieurs cartes, avec un peu d'aléatoire</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="my-works">
+                    <h1>Comment l'utiliser</h1>
+
+                    <!-- Finished animation -->
+                    <div class="preview">
+                        <video controls autoplay loop muted playsinline>
+                            <source data-src="simple_drop_anim.mp4" type="video/mp4">
+                        </video>
+                        <div class="preview-text">
+                            <h3>Animation finie</h3>
+                            <p>
+                                On peut faire une animation qui se joue <strong>une seule fois</strong> 
+                                ou <strong>un certain nombre de fois</strong>.
+                                <br><br>
+                                Ici par exmple, le cube va descendre d'une certaine hauteur 7 fois d'affilée, 
+                                avec un effet de <strong>rebond</strong> à chaque itération.</p>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <!-- Infinite animation -->
+                    <div class="preview">
+                        <video controls autoplay loop muted playsinline>
+                            <source data-src="infinite_and_link_anim.mp4" type="video/mp4">
+                        </video>
+                        <div class="preview-text">
+                            <h3>Animation infinie & lien entre animations</h3>
+                            <p>
+                                On peut également faire des animations <strong>infinies</strong>, 
+                                comme par exemple faire tourner un élément en boucle.
+                                <br><br>
+                                De plus, chaque <strong>TweenComponent</strong> et <strong>property</strong> ont 
+                                des <strong>UnityEvent</strong> et <strong>C# event</strong> à chaque état, 
+                                pour faire certaines actions lorsqu'on le souhaite.
+                                <br><br>
+                                Ici le triangle va se mettre à tourner à l'infini une fois que le carré aura fini son animation.
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <!-- Types & Eases -->
+                    <div class="preview">
+                        <video controls autoplay loop muted playsinline>
+                            <source data-src="custom_curves.mp4" type="video/mp4">
+                        </video>
+                        <div class="preview-text">
+                            <h3>Les Types et Eases</h3>
+                            <p>
+                                Les tweens ont beacoup de <strong>types</strong> et <strong>eases</strong> possible, une bonne partie est déjà <strong>intégrée</strong>. 
+                                <br><br>
+                                Cependant, si besoin, on peut également donner une <strong>CustomCurve</strong> que la property va suivre.
+                                <br><br>
+                                Pour des besoins très spécifiques, on peut donner une <strong>fonction</strong> que la property va utiliser par <strong>script</strong>.
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <!-- Download -->
+                    <div class="text-div">
+                        <h1>Lien pour le télécharger</h1>
+                        <p>Vous pouvez télécharger le package via mon 
+                            <a href="https://github.com/AugustePaccapelo/TweenCore/releases" target="_blank" rel="noopener noreferrer">Git</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <site-footer></site-footer>
+    </body>
+</html>
