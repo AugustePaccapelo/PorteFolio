@@ -75,22 +75,34 @@ async function loadProjectNavLinks() {
 }
 
 function setActivePageInNav() {
-    const currentPage = window.location.pathname;
+    const currentPage = normalizePath(window.location.pathname);
+    const homePage = normalizePath(new URL(ROOT).pathname);
 
     document.querySelectorAll("header a").forEach(function(link) {
-        const linkPath = new URL(link.href).pathname;
+        const linkPath = normalizePath(new URL(link.href).pathname);
+        const isHomeLink = linkPath === homePage;
 
-        if (currentPage === linkPath){
+        if (currentPage === linkPath) {
             link.classList.add("active");
         }
-        else if (linkPath.endsWith("index.html")) {
+        else if (!isHomeLink && linkPath.endsWith("index.html")) {
             const linkDir = linkPath.replace("index.html", "");
 
-            const isDirValid = !(linkDir.endsWith("docs/") || linkDir.endsWith("PorteFolio/"));
+            const isDirValid = linkDir !== "/";
 
             if (isDirValid && currentPage.startsWith(linkDir)) {
                 link.classList.add("active");
             }
         }
     })
+}
+
+function normalizePath(path) {
+    let normalizedPath = path.replace(/\/$/, "/index.html");
+
+    if (!normalizedPath.endsWith(".html")) {
+        normalizedPath = `${normalizedPath}/index.html`;
+    }
+
+    return normalizedPath.replace(/\/+/g, "/");
 }
