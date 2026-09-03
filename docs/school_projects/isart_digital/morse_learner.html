@@ -15,7 +15,16 @@
                 <!-- Context -->
                 <div class="text-div">
                     <h1>Contexte</h1>
-                    <p></p>
+                    <p>
+                        <strong>Morse Learner</strong> est un projet réalisé en solo durant ma
+                        <strong>première année à ISART Digital</strong>.
+                        <br>
+                        Le sujet était de créer un jeu qui soit à la fois un
+                        <strong>One Button Game</strong> et un <strong>Serious Game</strong>.
+                        <br><br>
+                        J'ai choisi de créer un jeu mobile autour de l'<strong>apprentissage du morse</strong>,
+                        en utilisant uniquement la durée d'appui du joueur pour différencier les entrées.
+                    </p>
                 </div>
 
                 <div class="divider"></div>
@@ -23,7 +32,16 @@
                 <!-- Pitch -->
                 <div class="text-div">
                     <h1>Pitch</h1>
-                    <p></p>
+                    <p>
+                        Le joueur doit reproduire des lettres en <strong>code morse</strong>.
+                        <br>
+                        Un <strong>appui court</strong> crée un point, tandis qu'un
+                        <strong>appui long</strong> crée un tiret.
+                        <br><br>
+                        L'objectif est de mémoriser progressivement l'alphabet morse grâce à un système
+                        de <strong>feedback visuel</strong>, d'<strong>animations</strong> et de
+                        <strong>progression par lettres</strong>.
+                    </p>
                 </div>
 
                 <div class="divider"></div>
@@ -31,8 +49,94 @@
                 <div class="my-works">
                     <h1>Mon travail</h1>
 
-                    <div class="text-div">
-                        <p></p>
+                    <div class="preview">
+                        <img data-src="">
+                        <div class="preview-text">
+                            <h3>Le système d'input</h3>
+                            <p>
+                                J'ai développé le <strong>système d'input principal</strong> du jeu.
+                                <br>
+                                Il détecte la durée de l'appui du joueur pour savoir s'il s'agit d'un
+                                <strong>point</strong> ou d'un <strong>tiret</strong>.
+                                <br><br>
+                                Le système fonctionne avec le <strong>tactile</strong> et la souris, ce qui
+                                permettait de tester facilement le jeu sur ordinateur tout en gardant une
+                                logique pensée pour mobile.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="preview">
+                        <img data-src="">
+                        <div class="preview-text">
+                            <h3>La vérification du morse</h3>
+                            <p>
+                                J'ai créé un système qui convertit les lettres en
+                                <strong>code morse</strong>, puis compare les entrées du joueur avec la
+                                lettre demandée.
+                                <br><br>
+                                À chaque point ou tiret ajouté, le jeu vérifie si la séquence est encore
+                                correcte. Si le joueur se trompe, la combinaison est réinitialisée et un
+                                <strong>feedback d'erreur</strong> est lancé.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="preview">
+                        <img data-src="">
+                        <div class="preview-text">
+                            <h3>La progression d'apprentissage</h3>
+                            <p>
+                                J'ai mis en place un mode d'apprentissage qui introduit les lettres
+                                <strong>progressivement</strong>.
+                                <br>
+                                Le joueur commence avec peu de lettres, puis en débloque de nouvelles
+                                après plusieurs bonnes réponses d'affilée.
+                                <br><br>
+                                L'objectif était de rendre l'apprentissage plus doux, sans afficher tout
+                                l'alphabet morse dès le début.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="preview">
+                        <img data-src="">
+                        <div class="preview-text">
+                            <h3>Le feedback visuel</h3>
+                            <p>
+                                J'ai travaillé sur les <strong>animations</strong> et les retours visuels
+                                des symboles.
+                                <br>
+                                Les points et les tirets apparaissent avec une animation, changent d'état
+                                lorsqu'ils sont corrects, et se cassent lorsque le joueur fait une erreur.
+                                <br><br>
+                                Ces feedbacks permettent au joueur de comprendre rapidement s'il est sur
+                                la bonne séquence ou non.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="preview">
+                        <img data-src="">
+                        <div class="preview-text">
+                            <h3>L'interface et les menus</h3>
+                            <p>
+                                J'ai développé les différents écrans du jeu :
+                                <strong>menu principal</strong>, <strong>sélection de niveau</strong>,
+                                <strong>écran d'aide</strong> et <strong>HUD</strong>.
+                                <br><br>
+                                L'écran d'aide affiche les lettres à apprendre et leur équivalent en morse,
+                                avec une animation montrant la différence entre un appui court et un appui long.
+                            </p>
+                        </div>
                     </div>
 
                     <div class="divider"></div>
@@ -41,8 +145,9 @@
                     <div class="text-div">
                         <h1>Lien pour le télécharger</h1>
                         <p>
+                            Vous pouvez télécharger une build via mon
                             <a href="https://github.com/AugustePaccapelo/MorseLearner/releases"
-                            target="_blank" rel="noopener noreferrer">git</a>.
+                            target="_blank" rel="noopener noreferrer">GitHub</a>.
                         </p>
                     </div>
                 </div>
